@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://gitcdn.link/repo/Chalarangelo/mini.css/master/dist/mini-default.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        .table-left {
+            flex-grow: 9 !important;
+        }
+
+        .table-mid {
+            flex-grow: 2 !important;
+        }
+
+        .table-right {
+            flex-grow: 1 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a id="header-title" href="#" class="logo">Playlist Control</a>
+    </header>
+    <!--div class="container">
+        <div class="row">
+            <div class="col container">
+                <div class="row">
+                    <div class="col">
+                        <input type="button" class="primary" value="<  Back" onClick="alert('back is not implemented')">
+                    </div>
+                    <div class="col">
+                        <input type="button" id="button-play" class="primary" value="Play" onClick="postCommand('play')">
+                    </div>
+                    <div class="col">
+                        <input type="button" class="primary" value="Next  >" onClick="postCommand('next')">
+                    </div>
+                </div>
+            </div>
+        </div-->
+    <div class="row">
+
+        <div class="col-sm-12 col-md-4 col-lg-4 container">
+            <div class="card fluid">
+                <div id="spinner-container" style="background-color: aliceblue;width: 100%;height: 100%;position: absolute;display: none;opacity: .8;">
+                    <p id="spinner-text" style="position: absolute;left: 30%;top: 30%;">Loading Stream<span class="spinner-donut" style="position: absolute;top: 125%;left: 40%;"></span></p>
+                </div>
+                <h1 class="section">Now Playing: </h1>
+                <img src="#" class="section media" id="now-playing-thumb">
+                <div id="statusContainer" class="section row">
+                </div>
+                <div class="section row">
+                    <h1><a id="now-playing" href="#"></a></h1>
+                </div>
+                <div class="section row button-group">
+                    <input value="<  Back" onclick="alert('back is not implemented')" class="primary" type="button">
+                    <input id="button-play" value="Play" onclick="postCommand('play')" class="primary" type="button">
+                    <input value="Next  >" onclick="postCommand('next')" class="primary" type="button">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-8 col-lg-8 container">
+            <form>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-8">
+                        <label for="link">Media URL:</label>
+                        <input type="text" style="width: 100%;" value="" id="link" placeholder="url">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <input type="button" class="primary" onClick="postQueue()" value="Submit">
+                    </div>
+                </div>
+            </form>
+            <table class="scrollable">
+                <caption>Play Queue</caption>
+                <colgroup>
+                    <col class="table-left">
+                    <col class="table-mid">
+                    <col class="table-right">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="table-left">Name</th>
+                        <th class="table-mid">URL</th>
+                        <th class="table-right">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id='queue-table'>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/mibot.js"></script>
+
+</html>
